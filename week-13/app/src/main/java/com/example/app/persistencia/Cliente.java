@@ -24,7 +24,5 @@ public class Cliente implements Serializable {
     private int idade;
     private double limiteCredito;
     private String telefone;
-
-    @ManyToOne
     private Pais pais;
 }

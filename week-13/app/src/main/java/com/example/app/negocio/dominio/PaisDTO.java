@@ -18,6 +18,18 @@ import lombok.NoArgsConstructor;
 @Builder
 public class PaisDTO {
 
+    static PaisDTO valueOf(Pais pais) {
+        return DTOFromEntity(pais);
+    }
+    
+    static Pais convertValue(PaisDTO pais) {
+        return Pais.builder()
+                .id(pais.getId())
+                .nome(pais.getNome())
+                .sigla(pais.getSigla().toString())
+                .build();
+    }
+
     private Long id;
 
     @EqualsAndHashCode.Include
